@@ -15,6 +15,7 @@ function startGame() {
 function initializeCards(cards) {
 
     let gameBoard = document.querySelector('#gameBoard')
+    gameBoard.innerHTML = ''
 
     game.cards.forEach(card => {
 
@@ -95,6 +96,11 @@ function flipCard (){
 
 function restart() {
     
-    initializeCards(game.createCardsFromTechs())
+    game.clearCards()
+
+    let gameOverLayer = document.getElementById("gameOver")
+    gameOverLayer.style.display = 'none';
+
+    startGame()
 
 }
